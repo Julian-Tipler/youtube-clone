@@ -62,7 +62,7 @@ function VideoGridItem({
           {formatDuration(duration)}
         </div>
         <video
-          className={`absolute inset-0 block h-full object-cover transition-opacity duration-200 ${
+          className={`absolute inset-0 block h-full object-cover transition-opacity duration-200 rounded ${
             isVideoPlaying ? "opacity-100 delay-200" : "opacity-0"
           }`}
           ref={videoRef}

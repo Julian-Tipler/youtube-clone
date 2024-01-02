@@ -2,13 +2,19 @@ import logo from "../assets/react.svg";
 import { ArrowLeft, Bell, Menu, Mic, Search, User, Video } from "lucide-react";
 import Button from "../components/Button";
 import { useState } from "react";
+import { useSidebarContext } from "../contexts/SidebarContext";
 
 function PageHeader() {
   const [searchPopup, setSearchPopup] = useState(false);
+  const { setSidebarDrawerOpen } = useSidebarContext();
   return (
     <div className="mx-4 mb-6 flex justify-between gap-10 pt-2 lg:gap-20">
       <div className="flex flex-shrink-0 items-center gap-4 ">
-        <Button variant="ghost" size="icon">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setSidebarDrawerOpen((prev: boolean) => !prev)}
+        >
           <Menu />
         </Button>
         <a href="/">
